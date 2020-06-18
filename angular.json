@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "counter-app"
+    }
+  },
+  "defaultProject": "counter-app",
+  "cli": {
+    "analytics": "d87b13af-b596-47ff-8e60-1919240c97d8"
+  }
 }
