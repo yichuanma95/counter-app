@@ -1,5 +1,5 @@
 # CounterApp
-A simple web-based Counter app with a Reset button.
+A simple web-based Counter app with a Reset button. URL: https://yichuanma95.github.io/counter-app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
