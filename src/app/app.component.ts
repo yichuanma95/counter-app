@@ -27,6 +27,11 @@ export class AppComponent {
   }
 
   onSet() {
+    if (this.newAmountFromInput === null) {
+      alert("Not a valid number.");
+      this.newAmountFromInput = 0;
+      return;
+    }
     if (this.newAmountFromInput < 0) {
       alert("Please set the counter to a non-negative value. Thank you.");
       this.newAmountFromInput = 0;
