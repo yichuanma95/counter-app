@@ -37,6 +37,12 @@ export class AppComponent {
       this.newAmountFromInput = 0;
       return;
     }
+    if (this.newAmountFromInput % 1 !== 0) {
+      alert("Let's only use this counter to count integers please. Thank you.");
+      this.newAmountFromInput = 0;
+      return;
+    }
+
     this.amount = this.newAmountFromInput;
   }
 }
