@@ -3,11 +3,15 @@
   <h5 class="text-center">Use this app to keep track of anything you need to count!</h5>
   <p class="text-center" id="counter">{{amount}}</p>
   <div class="text-center">
-    <button class="btn text-primary"><i class="fa fa-5x fa-minus-circle"></i></button>
-    <button class="btn text-primary"><i class="fa fa-5x fa-plus-circle"></i></button>
+    <button class="btn text-primary" (click)="onDecrement()">
+      <i class="fa fa-5x fa-minus-circle"></i>
+    </button>
+    <button class="btn text-primary" (click)="onIncrement()">
+      <i class="fa fa-5x fa-plus-circle"></i>
+    </button>
     <br/>
     <br/>
-    <button class="btn btn-danger" id="reset-btn">Reset</button>
+    <button class="btn btn-danger" id="reset-btn" (click)="onReset()">Reset</button>
   </div>
   <br/>
   <br/>
@@ -17,10 +21,10 @@
     <div class="col-md">
       <div class="row">
         <div class="col-9">
-          <input class="form-control text-center" type="number" min="0">
+          <input class="form-control text-center" type="number" min="0" [(ngModel)]="newAmountFromInput">
         </div>
         <div class="col-3">
-          <button class="btn btn-info">Set</button>
+          <button class="btn btn-info" (click)="onSet()">Set</button>
         </div>
       </div>
     </div>

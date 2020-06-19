@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,31 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   amount = 0;
+  newAmountFromInput = 0;
+
+  onDecrement() {
+    if (this.amount === 0) {
+      alert("This counter can\'t count below zero. Sorry.")
+      return;
+    }
+    this.amount--;
+  }
+
+  onIncrement() {
+    this.amount++;
+  }
+
+  onReset() {
+    this.amount = 0;
+    this.newAmountFromInput = 0;
+  }
+
+  onSet() {
+    if (this.newAmountFromInput < 0) {
+      alert("Please set the counter to a non-negative value. Thank you.");
+      this.newAmountFromInput = 0;
+      return;
+    }
+    this.amount = this.newAmountFromInput;
+  }
 }
