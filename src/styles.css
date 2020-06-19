@@ -11,3 +11,11 @@ button {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: lightblue;
+  text-align: center;
+}
