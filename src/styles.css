@@ -2,20 +2,30 @@
 @import "~bootstrap";
 @import "~font-awesome";
 
-body {
-  margin-top: 5%;
+/* Sticky footer trick from https://css-tricks.com/couple-takes-sticky-footer/ */
+html, body {
   background-color: aliceblue;
+  height: 100%;
+  margin: 0;
+}
+
+.content {
+  padding: 20px;
+  min-height: 100%;
+  margin: 0 auto -50px;
+}
+
+.push {
+  height: 50px;
+}
+
+.footer{
+  height: 50px;
+  background-color: lightblue;
+  text-align: center;
 }
 
 button {
   margin-left: 10px;
   margin-right: 10px;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: lightblue;
-  text-align: center;
 }
