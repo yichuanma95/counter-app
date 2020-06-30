@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,10 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   amount = 0;
-  newAmountFromInput = 0;
+  @ViewChild('f', {static: true})
+  setForm: NgForm;
 
   onDecrement() {
-    if (this.amount === 0) {
-      alert("This counter can\'t count below zero. Sorry.")
-      return;
-    }
     this.amount--;
   }
 
@@ -23,26 +21,10 @@ export class AppComponent {
 
   onReset() {
     this.amount = 0;
-    this.newAmountFromInput = 0;
+    this.setForm.reset();
   }
 
   onSet() {
-    if (this.newAmountFromInput === null) {
-      alert("Not a valid number.");
-      this.newAmountFromInput = 0;
-      return;
-    }
-    if (this.newAmountFromInput < 0) {
-      alert("Please set the counter to a non-negative value. Thank you.");
-      this.newAmountFromInput = 0;
-      return;
-    }
-    if (this.newAmountFromInput % 1 !== 0) {
-      alert("Let's only use this counter to count integers please. Thank you.");
-      this.newAmountFromInput = 0;
-      return;
-    }
-
-    this.amount = this.newAmountFromInput;
+    this.amount = +this.setForm.value.newAmount;
   }
 }

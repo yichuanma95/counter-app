@@ -3,7 +3,7 @@
   <h5 class="text-center">Use this app to keep track of anything you need to count!</h5>
   <p class="text-center" id="counter">{{amount}}</p>
   <div class="text-center">
-    <button class="btn text-primary" (click)="onDecrement()">
+    <button class="btn text-primary" (click)="onDecrement()" [disabled]="+amount <= 0">
       <i class="fa fa-5x fa-minus-circle"></i>
     </button>
     <button class="btn text-primary" (click)="onIncrement()">
@@ -15,18 +15,20 @@
   </div>
   <br/>
   <br/>
-  <p class="text-center">Use the following form to set the counter to your own value.</p>
+  <p class="text-center">Use the following form to set the counter to your own value (positive integers only).</p>
   <div class="row">
     <div class="col-md"></div>
     <div class="col-md">
-      <div class="row">
-        <div class="col-9">
-          <input class="form-control text-center" type="number" min="0" [(ngModel)]="newAmountFromInput">
+      <form (ngSubmit)="onSet()" #f="ngForm">
+        <div class="row">
+          <div class="col-9 form-group">
+            <input class="form-control text-center" type="number" ngModel pattern="^[1-9]+[0-9]*$" name="newAmount" required>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-info btn-block" type="submit" [disabled]="!f.valid">Set</button>
+          </div>
         </div>
-        <div class="col-3">
-          <button class="btn btn-info" (click)="onSet()">Set</button>
-        </div>
-      </div>
+      </form>
     </div>
     <div class="col-md"></div>
   </div>
