@@ -22,7 +22,14 @@
       <form (ngSubmit)="onSet()" #f="ngForm">
         <div class="row">
           <div class="col-9 form-group">
-            <input class="form-control text-center" type="number" ngModel pattern="^[1-9]+[0-9]*$" name="newAmount" required>
+            <input
+              class="form-control text-center"
+              type="number"
+              ngModel
+              pattern="^[1-9]+[0-9]*$"
+              name="newAmount"
+              min="0"
+              required>
           </div>
           <div class="col-3">
             <button class="btn btn-info btn-block" type="submit" [disabled]="!f.valid">Set</button>
