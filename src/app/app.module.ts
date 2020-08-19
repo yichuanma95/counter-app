@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { SingleCounterComponent } from './single-counter/single-counter.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { SingleCounterComponent } from './single-counter/single-counter.componen
     SingleCounterComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule
   ],
