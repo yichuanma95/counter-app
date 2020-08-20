@@ -9,3 +9,8 @@
 input {
   height: 38px;
 }
+
+#between-buttons {
+  margin-left: 10px;
+  margin-right: 10px;
+}

@@ -1,0 +1,16 @@
+<div class="text-right">
+  <a routerLink="../single-counter">Go to Single-Counter</a>
+</div>
+<div class="text-center">
+  <h1>Counter App</h1>
+  <h5>Use this app to count multiple things at once!</h5>
+  <br/>
+  <div class="list-group">
+    <div class="list-group-item counter-item" *ngFor="let counter of counters; let i = index">
+      <app-counter-item [counter]="counter" [index]="i"></app-counter-item>
+    </div>
+    <button class="btn btn-primary btn-block" (click)="onAddCounter()">Add Counter</button>
+  </div>
+  <br/>
+  <p>Please note that refreshing this page will cause you to lose your counters.</p>
+</div>

@@ -1,38 +1,40 @@
-<p class="text-center" id="counter">{{amount}}</p>
+<div class="text-right">
+  <a routerLink="../multi-counter">Go to Multi-Counter</a>
+</div>
 <div class="text-center">
-  <button class="btn text-primary" (click)="onDecrement()" [disabled]="+amount <= 0">
-    <i class="fa fa-5x fa-minus-circle"></i>
-  </button>
-  <button class="btn text-primary" (click)="onIncrement()">
-    <i class="fa fa-5x fa-plus-circle"></i>
-  </button>
+  <h1>Counter App</h1>
+  <h5>Use this app to keep track of anything you need to count!</h5>
+  <p id="counter">{{amount}}</p>
+  <button class="btn text-primary fa fa-5x fa-minus-circle" (click)="onDecrement()" [disabled]="+amount <= 0"></button>
+  <span id="between-buttons"></span>
+  <button class="btn text-primary fa fa-5x fa-plus-circle" (click)="onIncrement()"></button>
   <br/>
   <br/>
   <button class="btn btn-danger" id="reset-btn" (click)="onReset()">Reset</button>
-</div>
-<br/>
-<br/>
-<p class="text-center">Use the following form to set the counter to your own value (positive integers only).</p>
-<div class="row">
-  <div class="col-md"></div>
-  <div class="col-md">
-    <form (ngSubmit)="onSet()" #f="ngForm">
-      <div class="row">
-        <div class="col-9 form-group">
-          <input
-            class="form-control text-center"
-            type="number"
-            ngModel
-            pattern="^[1-9]+[0-9]*$"
-            name="newAmount"
-            min="0"
-            required>
+  <br/>
+  <br/>
+  <p>Use the following form to set the counter to your own value (positive integers only).</p>
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-md">
+      <form (ngSubmit)="onSet()" #f="ngForm">
+        <div class="row">
+          <div class="col-9 form-group">
+            <input
+              class="form-control text-center"
+              type="number"
+              ngModel
+              pattern="^[1-9]+[0-9]*$"
+              name="newAmount"
+              min="0"
+              required>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-info btn-block" type="submit" [disabled]="!f.valid">Set</button>
+          </div>
         </div>
-        <div class="col-3">
-          <button class="btn btn-info btn-block" type="submit" [disabled]="!f.valid">Set</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
+    <div class="col-md"></div>
   </div>
-  <div class="col-md"></div>
 </div>
