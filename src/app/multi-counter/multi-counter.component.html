@@ -1,5 +1,5 @@
 <div class="text-right">
-  <a routerLink="../single-counter">Go to Single-Counter</a>
+  <button class="btn btn-outline-primary" (click)="onNavigateToSingle()">Go to Single-Counter</button>
 </div>
 <div class="text-center">
   <h1>Counter App</h1>
@@ -7,7 +7,16 @@
   <br/>
   <div class="list-group">
     <div class="list-group-item counter-item" *ngFor="let counter of counters; let i = index">
-      <app-counter-item [counter]="counter" [index]="i"></app-counter-item>
+      <div class="row">
+        <div class="col-md-10">
+          <app-counter-item [counter]="counter" [index]="i"></app-counter-item>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-danger float-right" (click)="onDeleteCounter(i)">
+            <fa-icon [icon]="faTimes"></fa-icon>
+          </button>
+        </div>
+      </div>
     </div>
     <button class="btn btn-primary btn-block" (click)="onAddCounter()">Add Counter</button>
   </div>

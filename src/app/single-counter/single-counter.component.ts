@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {CounterService} from '../counter-service';
 import {Subscription} from 'rxjs';
+import {faMinusCircle, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-single-counter',
@@ -13,29 +15,31 @@ export class SingleCounterComponent implements OnInit, OnDestroy {
   @ViewChild('f', {static: true})
   setForm: NgForm;
   amountSub: Subscription;
+  faMinus = faMinusCircle;
+  faPlus = faPlusCircle;
 
   onDecrement() {
-    // this.amount--;
     this.counterService.singleCount = this.amount - 1;
   }
 
   onIncrement() {
-    // this.amount++;
     this.counterService.singleCount = this.amount + 1;
   }
 
   onReset() {
-    // this.amount = 0;
     this.counterService.singleCount = 0;
     this.setForm.reset();
   }
 
   onSet() {
-    // this.amount = +this.setForm.value.newAmount;
     this.counterService.singleCount = +this.setForm.value.newAmount;
   }
 
-  constructor(private counterService: CounterService) { }
+  onNavigateToMulti() {
+    this.router.navigate(['multi-counter']);
+  }
+
+  constructor(private counterService: CounterService, private router: Router) { }
 
   ngOnInit(): void {
     this.amount = this.counterService.singleCount;

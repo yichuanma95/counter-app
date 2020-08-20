@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Counter} from '../counter.model';
+import {faArrowUp, faMinusCircle, faPlusCircle, faRedo} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-counter-item',
@@ -11,6 +12,10 @@ export class CounterItemComponent implements OnInit {
   counter: Counter;
   @Input()
   index: number;
+  faMinusCircle = faMinusCircle;
+  faPlusCircle = faPlusCircle;
+  faArrowUp = faArrowUp;
+  faRedo = faRedo;
 
   onIncrement() {
     this.counter.amount++;
@@ -18,6 +23,10 @@ export class CounterItemComponent implements OnInit {
 
   onDecrement() {
     this.counter.amount--;
+  }
+
+  onReset() {
+    this.counter.amount = 0;
   }
 
   constructor() { }

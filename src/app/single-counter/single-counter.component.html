@@ -1,18 +1,20 @@
 <div class="text-right">
-  <a routerLink="../multi-counter">Go to Multi-Counter</a>
+  <button class="btn btn-outline-primary" (click)="onNavigateToMulti()">Go to Multi-Counter</button>
 </div>
 <div class="text-center">
   <h1>Counter App</h1>
   <h5>Use this app to keep track of anything you need to count!</h5>
   <p id="counter">{{amount}}</p>
-  <button class="btn text-primary fa fa-5x fa-minus-circle" (click)="onDecrement()" [disabled]="+amount <= 0"></button>
+  <button class="btn text-primary" (click)="onDecrement()" [disabled]="+amount <= 0">
+    <fa-icon [icon]="faMinus" class="fa-5x"></fa-icon>
+  </button>
   <span id="between-buttons"></span>
-  <button class="btn text-primary fa fa-5x fa-plus-circle" (click)="onIncrement()"></button>
-  <br/>
-  <br/>
+  <button class="btn text-primary" (click)="onIncrement()">
+    <fa-icon [icon]="faPlus" class="fa-5x"></fa-icon>
+  </button>
+  <br><br>
   <button class="btn btn-danger" id="reset-btn" (click)="onReset()">Reset</button>
-  <br/>
-  <br/>
+  <br><br>
   <p>Use the following form to set the counter to your own value (positive integers only).</p>
   <div class="row">
     <div class="col-md"></div>

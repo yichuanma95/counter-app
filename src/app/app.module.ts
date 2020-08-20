@@ -7,6 +7,7 @@ import { SingleCounterComponent } from './single-counter/single-counter.componen
 import {AppRoutingModule} from './app-routing.module';
 import { MultiCounterComponent } from './multi-counter/multi-counter.component';
 import { CounterItemComponent } from './multi-counter/counter-item/counter-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CounterItemComponent } from './multi-counter/counter-item/counter-item.
   imports: [
     AppRoutingModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

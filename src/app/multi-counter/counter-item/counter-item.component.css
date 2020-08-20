@@ -1,3 +1,15 @@
 .name-label {
   width: 100%;
 }
+
+.decrement-at-0 {
+  pointer-events: none;
+}
+
+.between-buttons {
+  margin: 10px;
+}
+
+.counter-main-btn {
+  cursor: pointer;
+}

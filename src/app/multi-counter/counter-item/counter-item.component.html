@@ -2,18 +2,25 @@
   <div class="col-md-6">
     <input class="form-control" id="counter-{{index}}" type="text" [(ngModel)]="counter.name">
     <label for="counter-{{index}}" class="name-label">
-      <i class="fa fa-2x fa-arrow-up"></i>&nbsp;Name of Counter&nbsp;<i class="fa fa-2x fa-arrow-up"></i>
+      <fa-icon [icon]="faArrowUp" class="fa-2x"></fa-icon>
+      &nbsp;Name of Counter&nbsp;
+      <fa-icon [icon]="faArrowUp" class="fa-2x"></fa-icon>
     </label>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-5">
     <span class="text-center">
       <input class="form-control text-center" [(ngModel)]="counter.amount" type="number" min="0">
-      <button
-        class="btn text-primary fa fa-2x fa-minus-circle"
-        [disabled]="counter.amount === 0"
+      <fa-icon
+        [icon]="faMinusCircle"
+        class="text-primary fa-2x counter-main-btn"
+        [ngClass]="{'decrement-at-0': counter.amount === 0}"
         (click)="onDecrement()"
-      ></button>
-      <button class="btn text-primary fa fa-2x fa-plus-circle" (click)="onIncrement()"></button>
+      ></fa-icon>
+      <span class="between-buttons"></span>
+      <fa-icon [icon]="faPlusCircle" class="fa-2x text-primary counter-main-btn" (click)="onIncrement()"></fa-icon>
     </span>
+  </div>
+  <div class="col-md-1">
+    <button class="btn btn-danger" (click)="onReset()">Reset</button>
   </div>
 </div>
