@@ -1,6 +1,12 @@
 <div class="row">
   <div class="col-md-6">
-    <input class="form-control" id="counter-{{index}}" type="text" [(ngModel)]="counter.name">
+    <input
+      class="form-control"
+      id="counter-{{index}}"
+      type="text"
+      placeholder="Name your counter!"
+      [(ngModel)]="counter.name"
+    >
     <label for="counter-{{index}}" class="name-label">
       <fa-icon [icon]="faArrowUp" class="fa-2x"></fa-icon>
       &nbsp;Name of Counter&nbsp;
